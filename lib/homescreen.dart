@@ -155,7 +155,7 @@ Double Acrylic'''),
               title: const Text('Sign Out'),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pop(
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const LogInScreen()));
