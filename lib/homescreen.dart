@@ -108,7 +108,7 @@ Material: Acrylic
 Double Acrylic'''),
   ];
 
-  HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

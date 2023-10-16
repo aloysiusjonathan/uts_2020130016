@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:uts_2020130016/homescreen.dart';
 
 class LogInScreen extends StatelessWidget {
-  const LogInScreen({Key? key}) : super(key: key);
+  const LogInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

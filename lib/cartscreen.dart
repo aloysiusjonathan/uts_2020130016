@@ -11,12 +11,12 @@ class CartScreen extends StatefulWidget {
   final int productQuantity;
 
   const CartScreen({
-    Key? key,
+    super.key,
     required this.imagePath,
     required this.productName,
     required this.productPrice,
     required this.productQuantity,
-  }) : super(key: key);
+  });
 
   @override
   // ignore: library_private_types_in_public_api
