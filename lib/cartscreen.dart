@@ -130,12 +130,14 @@ class _CartScreenState extends State<CartScreen> {
                 Container(
                   width: (MediaQuery.of(context).size.width - 60) / 2,
                   color: Colors.transparent,
-                  child: Text(
-                    'Total: Rp ${calculateTotalPrice(cartProvider.cartItems)}',
-                    style: const TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  child: Center(
+                    child: Text(
+                      'Total: Rp ${calculateTotalPrice(cartProvider.cartItems)}',
+                      style: const TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

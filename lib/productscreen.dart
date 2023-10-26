@@ -100,52 +100,54 @@ class _ProductScreenState extends State<ProductScreen> {
                   width: (screenWidth - 60) / 2,
                   color: Colors.transparent,
                   child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            ElevatedButton(
-                              onPressed: () {
-                                int currentValue =
-                                    int.tryParse(_quantityController.text) ?? 1;
-                                if (currentValue > 1) {
-                                  _quantityController.text =
-                                      (currentValue - 1).toString();
-                                }
-                              },
-                              child: const Icon(
-                                Icons.remove,
-                                color: Color.fromARGB(255, 218, 12, 129),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 40.0,
-                              child: TextField(
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                    fontSize: 18.0, color: Colors.white),
-                                keyboardType: TextInputType.number,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                ),
-                                controller: _quantityController,
-                              ),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                int currentValue =
-                                    int.tryParse(_quantityController.text) ?? 1;
+                        ElevatedButton(
+                          onPressed: () {
+                            int currentValue =
+                                int.tryParse(_quantityController.text) ?? 1;
+                            if (currentValue > 1) {
+                              setState(() {
                                 _quantityController.text =
-                                    (currentValue + 1).toString();
-                              },
-                              child: const Icon(
-                                Icons.add,
-                                color: Color.fromARGB(255, 218, 12, 129),
+                                    (currentValue - 1).toString();
+                              });
+                            }
+                          },
+                          child: const Icon(
+                            Icons.remove,
+                            color: Color.fromARGB(255, 218, 12, 129),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 10.0),
+                            child: TextFormField(
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                  fontSize: 18.0, color: Colors.white),
+                              keyboardType: TextInputType.number,
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
                               ),
+                              controller: _quantityController,
                             ),
-                          ],
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            int currentValue =
+                                int.tryParse(_quantityController.text) ?? 1;
+                            setState(() {
+                              _quantityController.text =
+                                  (currentValue + 1).toString();
+                            });
+                          },
+                          child: const Icon(
+                            Icons.add,
+                            color: Color.fromARGB(255, 218, 12, 129),
+                          ),
                         ),
                       ],
                     ),
